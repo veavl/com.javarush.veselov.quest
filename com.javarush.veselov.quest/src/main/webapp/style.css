@@ -24,7 +24,7 @@ p a:hover {
 }
 input {
     font-size: 18px;
-    padding: 5px;
+    padding: 5px 15px;
 }
 input[type="submit"]
 {
