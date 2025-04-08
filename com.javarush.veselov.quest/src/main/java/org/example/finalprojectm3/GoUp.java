@@ -20,10 +20,13 @@ public class GoUp extends HttpServlet {
 
         PrintWriter out = response.getWriter();
         out.println("<!doctype html>");
-        out.println("<html><body>");
+        out.println("<html><head>\n" +
+                "    <title>JSP - Hello World</title>\n" +
+                "    <link rel='stylesheet' href='style.css'>\n" +
+                "</head><body>");
 
-        out.println("Имя: " + session.getAttribute("name") + "<br>");
-        out.println("Количество игр: " + counter);
+        out.println("<div class = 'session'>Имя: " + session.getAttribute("name") + "<br>");
+        out.println("Количество игр: " + counter + "</div>");
 
         String answer = request.getParameter("goUp");
         if (answer.equals("yesGoUp")) {

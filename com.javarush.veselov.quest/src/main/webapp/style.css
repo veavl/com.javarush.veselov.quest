@@ -1,0 +1,65 @@
+body {
+    background: url(img/bg_main.jpg) no-repeat;
+    color: aliceblue;
+    font-family: 'Segoe UI', sans-serif;
+}
+h1 {
+    font-size: 44px;
+}
+p, form {
+    font-size: 22px;
+    font-family: Baskerville, 'Palatino Linotype', Palatino, 'Century Schoolbook L', 'Times New Roman', serif;
+}
+p a {
+    color: #333;
+    border: #CCC solid 1px;
+    padding: 5px 15px;
+    font-size: 20px;
+    text-decoration: none;
+    background-color: aquamarine;
+}
+p a:hover {
+    color: #fff;
+    background-color: #333333;
+}
+input {
+    font-size: 18px;
+    padding: 5px;
+}
+input[type="submit"]
+{
+    cursor: pointer;
+    border-radius: 0px;
+}
+input[type="submit"]:hover
+{
+    background-color: brown;
+    color: aliceblue;
+}
+.session {
+    border: #CCC solid 1px;
+    color: #999;
+    padding: 5px;
+    width: 200px;
+}
+h3 {
+    color: #ffffff;
+    border: #CCC solid 1px;
+    padding: 5px 15px;
+    font-size: 22px;
+    font-family: Baskerville, 'Palatino Linotype', Palatino, 'Century Schoolbook L', 'Times New Roman', serif;
+    text-decoration: none;
+    background-color: darkgreen;
+    width: 500px;
+}
+h4 {
+    color: #ffffff;
+    border: #CCC solid 1px;
+    padding: 5px 15px;
+    font-size: 22px;
+    font-family: Baskerville, 'Palatino Linotype', Palatino, 'Century Schoolbook L', 'Times New Roman', serif;
+    text-decoration: none;
+    background-color: brown;
+    width: 180px;
+}
+

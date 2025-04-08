@@ -34,7 +34,10 @@ public class StartGame extends HttpServlet {
 
         PrintWriter out = response.getWriter();
         out.println("<!doctype html>");
-        out.println("<html><body>");
+        out.println("<html><head>\n" +
+                "    <title>JSP - Hello World</title>\n" +
+                "    <link rel='stylesheet' href='style.css'>\n" +
+                "</head><body>");
 
         // Если в рамках одной Сессии играют разные User'ы -- у каждого свой счетчик "Количество игр"
         Map<String, Integer> counterNameMap = Settings.counterName;
@@ -57,10 +60,10 @@ public class StartGame extends HttpServlet {
         if (isNull(playerGame)) {
             out.println("Что-то пошло не так! " + null);
         } else if (playerGame.isBlank()) {
-            out.println("Вы не представились!" + "<p><a href='index.jsp'>Вернуться и указать имя</a>");
+            out.println("<p>Вы не представились!" + "<p><a href='index.jsp'>Вернуться и указать имя</a>");
         } else {
-            out.println("Имя: " + request.getParameter("playerGame") + "<br>");
-            out.println("Количество игр: " + counter);
+            out.println("<div class = 'session'>Имя: " + request.getParameter("playerGame") + "<br>");
+            out.println("Количество игр: " + counter + "</div>");
             out.println("<h1>" + message + "</h1>");
 
             out.println("<form action = 'TakeCall' method='POST'>" +
