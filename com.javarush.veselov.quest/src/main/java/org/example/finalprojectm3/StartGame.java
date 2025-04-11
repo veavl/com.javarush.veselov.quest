@@ -23,19 +23,21 @@ public class StartGame extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html; charset=utf-8");
-
         request.setCharacterEncoding("UTF-8");
-        String playerGame = request.getParameter("playerGame");
-
+        response.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
+
         Integer counter = (Integer) session.getAttribute("counter");
-        session.setAttribute("name", request.getParameter("playerGame"));
+        PrintWriter out = response.getWriter();
+
+        String playerGame = Settings.getParameter(request, Settings.inputName);
+
+        session.setAttribute("name", request.getParameter(Settings.inputName));
         session.setMaxInactiveInterval(120);
 
-        PrintWriter out = response.getWriter();
         out.println("<!doctype html>");
         out.println("<html><head>\n" +
-                "    <title>JSP - Hello World</title>\n" +
+                "    <title>Start Game</title>\n" +
                 "    <link rel='stylesheet' href='style.css'>\n" +
                 "</head><body>");
 
@@ -57,27 +59,25 @@ public class StartGame extends HttpServlet {
             }
         }
 
-        if (isNull(playerGame)) {
-            out.println("Что-то пошло не так! " + null);
-        } else if (playerGame.isBlank()) {
+        if (playerGame.isBlank()) {
             out.println("<p>Вы не представились!" + "<p><a href='index.jsp'>Вернуться и указать имя</a>");
         } else {
-            out.println("<div class = 'session'>Имя: " + request.getParameter("playerGame") + "<br>");
+            out.println("<div class = 'session'>Имя: " + playerGame + "<br>");
             out.println("Количество игр: " + counter + "</div>");
             out.println("<h1>" + message + "</h1>");
 
             out.println("<form action = 'TakeCall' method='POST'>" +
                     "<h3>Принять вызов НЛО?</h3> " +
                     "<input type='hidden' name='name' value=' ' />" +
-                    "<input type='radio' name='call' value='yesCall' checked/>Принять <br>" +
-                    "<input type='radio' name='call' value='noCall'/>Отклонить <br>" +
+                    "<input type='radio' name='call' value='yesCall' checked/>Принять вызов<br>" +
+                    "<input type='radio' name='call' value='noCall'/>Отклонить вызов<br>" +
                     "<p><input type='submit' value='Продолжить'/>" +
                     "</form>"
             );
         }
-
         out.println("</body></html>");
     }
+
     public void destroy() {
     }
 }

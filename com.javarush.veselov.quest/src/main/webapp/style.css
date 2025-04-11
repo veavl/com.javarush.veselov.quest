@@ -8,7 +8,18 @@ h1 {
 }
 p, form {
     font-size: 22px;
-    font-family: Baskerville, 'Palatino Linotype', Palatino, 'Century Schoolbook L', 'Times New Roman', serif;
+    font-family: Arial;
+}
+.hello {
+    border: #CCC solid 1px;
+    color: #CCC;
+    width: 400px;
+    margin-bottom: 10px;
+    padding: 0px 10px;
+    background-color: brown;
+}
+div p {
+    font-size: 18px;
 }
 p a {
     color: #333;

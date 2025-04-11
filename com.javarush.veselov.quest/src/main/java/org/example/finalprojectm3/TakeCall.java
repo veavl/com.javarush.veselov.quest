@@ -13,14 +13,16 @@ public class TakeCall extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html; charset=utf-8");
-
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
+
         Integer counter = (Integer) session.getAttribute("counter");
 
         PrintWriter out = response.getWriter();
         out.println("<!doctype html>");
         out.println("<html><head>\n" +
-                "    <title>JSP - Hello World</title>\n" +
+                "    <title>Take Call</title>\n" +
                 "    <link rel='stylesheet' href='style.css'>\n" +
                 "</head><body>");
 
