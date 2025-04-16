@@ -7,7 +7,7 @@
     <groupId>org.example</groupId>
     <artifactId>M3-FinalProgect-V2</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>com.javarush.veselov-a.quest</name>
+    <name>M3-FinalProject</name>
     <packaging>war</packaging>
 
     <properties>
@@ -19,19 +19,33 @@
 
     <dependencies>
 
-        <!-- jakarta.servlet -->
-<!--        <dependency>-->
-<!--            <groupId>jakarta.servlet</groupId>-->
-<!--            <artifactId>jakarta.servlet-api</artifactId>-->
-<!--            <version>6.0.0</version>-->
-<!--            <scope>provided</scope>-->
-<!--        </dependency>-->
+        <!-- jakarta.servlet-api -->
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>5.0.0</version>
+            <scope>provided</scope>
+        </dependency>
 
+        <!-- javax.servlet-api -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>4.0.1</version>
             <scope>provided</scope>
+        </dependency>
+
+        <!-- jsp.jstl-api -->
+        <dependency>
+            <groupId>jakarta.servlet.jsp.jstl</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+        <!-- jsp.jstl -->
+        <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+            <version>1.2.6</version>
         </dependency>
 
         <!-- junit-jupiter-api -->
@@ -49,6 +63,31 @@
             <version>5.10.3</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- mockito-core -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>5.11.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- mockito-junit-jupiter -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>5.9.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- ДЛЯ ТЕСТИРОВАНИЯ - НЕ ПРИГОДИЛОСЬ/НЕ ПОЛУЧИЛОСЬ -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>6.1.10</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>

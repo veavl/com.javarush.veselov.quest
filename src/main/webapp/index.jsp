@@ -1,4 +1,7 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@  page import="org.example.m3finalprogectv2.util.Settings" %>
+
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
@@ -8,14 +11,17 @@
 <h1>Игра Квест</h1>
 
 <div class="hello">
-    <p>Привет, ДРУГ. Введи свое имя. Пока помнишь.
+    <p>Привет, НЕЗНАКОМЕЦ.
+    <h2>СЕЙЧАС <c:out value="${3000 + Settings.getRandom()}"/> ГОД.</h2>
+    <p>Введи свое имя. Пока помнишь.
     <p>Скоро ты его забудешь.
-    <p>Тебя ждут настоящие приключения!
 </div>
 
     <form action = 'servlet' method='POST'>
     <p>Ваше имя:
-    <input name="playerName"/>
+    <label>
+        <input name="playerName">
+    </label>
     <input type="hidden" name="idQuestion" value="1">
     <input type='hidden' name='answer' value=''/>
     <p><input type='submit' value='Начать игру'/>

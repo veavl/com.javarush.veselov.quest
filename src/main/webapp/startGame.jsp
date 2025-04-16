@@ -3,7 +3,7 @@
 
 <%
     request.setCharacterEncoding("UTF-8");
-    HttpSession sess = request.getSession();
+    HttpSession sess = (HttpSession) request.getSession();
     Integer counter = (Integer) sess.getAttribute("counter");       // СЧЕТЧИК СЕССИИ
 
     // ПОЛУЧАЕМ АРИБУТЫ ИЗ ЗАПРОСА
